@@ -5,7 +5,22 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class EmailValidatorTest {
+    // ДЗ begin
 
+    @Test
+    fun emailValidator_InvalidEmailNoDomain_ReturnFalse(){
+        assertFalse(EmailValidator.isValidEmail("name@"))
+    }
+
+    @Test
+    fun emailValidator_InvalidEmailOnlyUsername_ReturnFalse(){
+        assertFalse(EmailValidator.isValidEmail("name"))
+    }
+    @Test
+    fun emailValidator_InvalidEmailOnlyAmpersand_ReturnFalse(){
+        assertFalse(EmailValidator.isValidEmail("@"))
+    }
+    // ДЗ end
     @Test
     fun emailValidator_CorrectEmailSimple_ReturnsTrue() {
         assertTrue(EmailValidator.isValidEmail("name@email.com"))

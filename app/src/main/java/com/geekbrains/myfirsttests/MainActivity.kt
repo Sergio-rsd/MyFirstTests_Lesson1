@@ -20,13 +20,18 @@ class MainActivity : AppCompatActivity() {
 
             saveButton.setOnClickListener {
                 if (emailValidator.isValid) {
-                    Toast.makeText(this@MainActivity, getString(R.string.valid_email), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@MainActivity,
+                        getString(R.string.valid_email),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 } else {
                     val errorEmail = getString(R.string.invalid_email)
                     emailInput.error = errorEmail
                     Toast.makeText(this@MainActivity, errorEmail, Toast.LENGTH_SHORT).show()
                 }
             }
+
         }
     }
 }
